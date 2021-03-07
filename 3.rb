@@ -10,4 +10,24 @@
 #
 ## Решение:
 
+file = File.open("data/3.txt", "r+").read
 
+lines = file.split("\n")
+
+arr = []
+result = 0
+
+for i in lines
+    numbers = i.split("\t")
+
+    numbers.each do |g|
+        arr << g.to_i
+    end
+
+    result += (arr.max) - (arr.min)
+
+    arr = []
+
+end
+
+puts result

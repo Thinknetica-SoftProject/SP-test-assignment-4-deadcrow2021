@@ -16,3 +16,21 @@
 #
 ## Решение:
 
+require 'digest'
+
+word = gets.chomp
+
+i = 1
+while true
+
+    hex = Digest::MD5.hexdigest (word + "#{i}")
+    
+    if hex.slice(..4) == "00000"
+        puts i
+        break
+    else
+        i += 1
+    end
+
+end
+

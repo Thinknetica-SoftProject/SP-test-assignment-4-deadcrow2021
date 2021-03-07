@@ -16,6 +16,21 @@
 #
 ## Решение:
 
+i = 0
+
+file = File.open("data/1.txt", "r+").read
+
+arr = file.split("")
+
+arr.each do |x|
+    if x == "("
+        i += 1
+    elsif x == ")"
+        i -= 1
+    end
+end
+
+puts i
 
 
 
